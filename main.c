@@ -15,7 +15,15 @@ int main(void) {
 
   while (!WindowShouldClose()) {
     // Update
-    // TODO: Add update method
+    if (IsKeyReleased(KEY_RIGHT)) {
+      pos.x += 16;
+    } else if (IsKeyReleased(KEY_LEFT)) {
+      pos.x -= 16;
+    } else if (IsKeyReleased(KEY_UP)) {
+      pos.y -= 16;
+    } else if (IsKeyReleased(KEY_DOWN)) {
+      pos.y += 16;
+    }
 
     // Draw
     BeginDrawing();
