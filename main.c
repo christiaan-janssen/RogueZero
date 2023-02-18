@@ -1,3 +1,5 @@
+#include "gameData.h"
+#include "input.h"
 #include "raylib.h"
 
 int main(void) {
@@ -6,30 +8,24 @@ int main(void) {
 
   InitWindow(screenWidth, screenHeight, "Roguelike");
 
+  struct GameData *gameData = setupGameData();
+
   SetTargetFPS(60);
 
   Texture2D texture = LoadTexture("colored_packed.png");
 
-  Vector2 pos = {16.0f, 16.0f};
-  Rectangle rect = {25 * 16.0f, 0.0f, 16.0f, 16.0f};
+  Rectangle rect = {25 * gameData->tileSize, 0.0f, gameData->tileSize,
+                    gameData->tileSize};
 
   while (!WindowShouldClose()) {
     // Update
-    if (IsKeyReleased(KEY_RIGHT)) {
-      pos.x += 16;
-    } else if (IsKeyReleased(KEY_LEFT)) {
-      pos.x -= 16;
-    } else if (IsKeyReleased(KEY_UP)) {
-      pos.y -= 16;
-    } else if (IsKeyReleased(KEY_DOWN)) {
-      pos.y += 16;
-    }
+    handleInput(gameData);
 
     // Draw
     BeginDrawing();
 
     ClearBackground(RAYWHITE);
-    DrawTextureRec(texture, rect, pos, WHITE);
+    DrawTextureRec(texture, rect, gameData->playerPos, WHITE);
 
     EndDrawing();
   }
