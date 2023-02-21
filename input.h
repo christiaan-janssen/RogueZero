@@ -5,6 +5,6 @@
 #include "raylib.h"
 #include <stdio.h>
 
-void handleInput(struct GameData *g);
+void handleInput(GameData *g);
 
 #endif // INPUT_H_

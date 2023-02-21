@@ -1,3 +1,5 @@
+#include "entity.h"
+#include "render.h"
 #include "gameData.h"
 #include "input.h"
 #include "raylib.h"
@@ -8,14 +10,9 @@ int main(void) {
 
   InitWindow(screenWidth, screenHeight, "Roguelike");
 
-  struct GameData *gameData = setupGameData();
+  GameData *gameData = setupGameData();
 
   SetTargetFPS(60);
-
-  Texture2D texture = LoadTexture("colored_packed.png");
-
-  Rectangle rect = {25 * gameData->tileSize, 0.0f, gameData->tileSize,
-                    gameData->tileSize};
 
   while (!WindowShouldClose()) {
     // Update
@@ -25,7 +22,7 @@ int main(void) {
     BeginDrawing();
 
     ClearBackground(RAYWHITE);
-    DrawTextureRec(texture, rect, gameData->playerPos, WHITE);
+	renderEntity(gameData);
 
     EndDrawing();
   }

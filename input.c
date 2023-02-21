@@ -1,13 +1,13 @@
 #include "input.h"
 
-void handleInput(struct GameData *g) {
+void handleInput(GameData *g) {
   if (IsKeyReleased(KEY_RIGHT)) {
-    g->playerPos.x += 16;
+    g->player.pos.x += 16;
   } else if (IsKeyReleased(KEY_LEFT)) {
-    g->playerPos.x -= 16;
+    g->player.pos.x -= 16;
   } else if (IsKeyReleased(KEY_UP)) {
-    g->playerPos.y -= 16;
+    g->player.pos.y -= 16;
   } else if (IsKeyReleased(KEY_DOWN)) {
-    g->playerPos.y += 16;
+    g->player.pos.y += 16;
   }
 }
