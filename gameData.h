@@ -6,8 +6,9 @@
 #include <stdlib.h>
 
 typedef struct GameData {
+  int mapWidth;
+  int mapHeight;
   float tileSize;
-  Vector2 playerPos;
   struct Entity player;
   Texture2D texture;
 } GameData;
