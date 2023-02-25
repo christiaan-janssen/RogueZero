@@ -6,5 +6,6 @@
 #include <stdio.h>
 
 void handleInput(GameData *g);
+bool checkMove(GameData *g, Vector2 move);
 
 #endif // INPUT_H_
