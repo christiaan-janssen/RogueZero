@@ -17,5 +17,10 @@ GameData *setupGameData() {
 
   gameData->texture = LoadTexture("colored_packed.png");
 
+	gameData->log = (queue_t *)malloc(sizeof(queue_t));
+  gameData->log->front = -1;
+  gameData->log->rear = -1;
+
+
   return gameData;
 }
