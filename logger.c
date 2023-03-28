@@ -31,7 +31,6 @@ void display(queue_t *q) {
       int i;
       for(i=q->front; i<=q->rear; i++) {
       DrawText(q->items[i].text, 10, 600+20*i, 20, q->items[i].color);
-	      //printf("\"%s\"(Color: %d %d %d %d) ", q->items[i].text, q->items[i].color.r, q->items[i].color.g, q->items[i].color.b, q->items[i].color.a);
       }
    }
 }
