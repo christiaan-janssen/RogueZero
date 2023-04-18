@@ -1,9 +1,10 @@
 #include "entity.h"
-#include "render.h"
 #include "gameData.h"
 #include "input.h"
 #include "logger.h"
 #include "raylib.h"
+#include "render.h"
+#include "save.h"
 
 int main(void) {
   const int screenWidth = 800;
@@ -19,10 +20,6 @@ int main(void) {
   char *text2 = "Becarfule out there";
   Color color2 = MAROON;
   enqueue(gameData->log, text2, color2);
-
-	for (int i = 0; i<10; i++) {
-		enqueue(gameData->log, "Test log msg", LIGHTGRAY);
-	}
 
   SetTargetFPS(60);
 
@@ -41,6 +38,8 @@ int main(void) {
     EndDrawing();
   }
   CloseWindow();
+
+  saveGame(gameData);
 
   return 0;
 }

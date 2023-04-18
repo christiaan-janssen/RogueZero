@@ -5,6 +5,7 @@
 #include "raylib.h"
 #include <stdlib.h>
 #include "logger.h"
+#include "cJSON.h"
 
 typedef struct GameData {
   int mapWidth;

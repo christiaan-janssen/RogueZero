@@ -3,16 +3,16 @@
 void handleInput(GameData *g) {
   if (IsKeyReleased(KEY_RIGHT)) {
     if (checkMove(g, (Vector2){1.0f, 0.0f}))
-      g->player.pos.x += 1;
+      g->player.pos.x += 1.0f;
   } else if (IsKeyReleased(KEY_LEFT)) {
     if (checkMove(g, (Vector2){-1.0f, 0.0f}))
-      g->player.pos.x -= 1;
+      g->player.pos.x -= 1.0f;
   } else if (IsKeyReleased(KEY_UP)) {
     if (checkMove(g, (Vector2){0.0f, -1.0f}))
-      g->player.pos.y -= 1;
+      g->player.pos.y -= 1.0f;
   } else if (IsKeyReleased(KEY_DOWN)) {
     if (checkMove(g, (Vector2){0.0f, 1.0f}))
-      g->player.pos.y += 1;
+      g->player.pos.y += 1.0f;
   }
 }
 
