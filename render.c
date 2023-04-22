@@ -6,3 +6,12 @@ void renderEntity(GameData *g) {
       (Vector2){g->player.pos.x * g->tileSize, g->player.pos.y * g->tileSize},
       WHITE);
 }
+
+void renderMap(GameData *g) {
+  for (int i = 0; i < 10; i++) {
+    DrawTextureRec(g->texture, g->gameMap->tiles[i]->rect,
+                   (Vector2){g->gameMap->tiles[i]->pos.x * g->tileSize,
+                             g->gameMap->tiles[i]->pos.y * g->tileSize},
+                   WHITE);
+  }
+}

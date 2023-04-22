@@ -33,6 +33,9 @@ int main(void) {
     display(gameData->log);
 
     ClearBackground(RAYWHITE);
+
+    renderMap(gameData);
+
     renderEntity(gameData);
 
     EndDrawing();

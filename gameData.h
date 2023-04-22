@@ -1,19 +1,21 @@
 #ifndef GAMEDATA_H_
 #define GAMEDATA_H_
 
+#include "cJSON.h"
 #include "entity.h"
+#include "gameMap.h"
+#include "logger.h"
 #include "raylib.h"
 #include <stdlib.h>
-#include "logger.h"
-#include "cJSON.h"
 
 typedef struct GameData {
   int mapWidth;
   int mapHeight;
   float tileSize;
+  struct GameMap *gameMap;
   struct Entity player;
   Texture2D texture;
-	queue_t *log;
+  queue_t *log;
 } GameData;
 
 struct GameData *setupGameData();
