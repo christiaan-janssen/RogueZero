@@ -5,9 +5,12 @@
 #include "tile.h"
 
 typedef struct GameMap {
-  Tile *tiles[10];
+  const int width;
+  const int height;
+  Tile *tiles[];
 } GameMap;
 
-GameMap *createMap(float tileSize);
+GameMap *createMap(int width, int height, float tileSize);
+int coordToId(int x, int y, float height);
 
 #endif // GAMEMAP_H_

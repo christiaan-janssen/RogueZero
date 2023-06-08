@@ -8,7 +8,7 @@ void renderEntity(GameData *g) {
 }
 
 void renderMap(GameData *g) {
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < g->mapWidth * g->mapHeight; i++) {
     DrawTextureRec(g->texture, g->gameMap->tiles[i]->rect,
                    (Vector2){g->gameMap->tiles[i]->pos.x * g->tileSize,
                              g->gameMap->tiles[i]->pos.y * g->tileSize},

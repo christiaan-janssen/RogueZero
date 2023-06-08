@@ -8,13 +8,14 @@ GameData *setupGameData() {
   }
 
   gameData->mapWidth = 50;
-  gameData->mapHeight = 40;
+  gameData->mapHeight = 35;
   gameData->tileSize = 16.0f;
   gameData->player.rect = (Rectangle){25 * gameData->tileSize, 0.0f,
                                       gameData->tileSize, gameData->tileSize};
 
   gameData->texture = LoadTexture("colored_packed.png");
-  gameData->gameMap = createMap(gameData->tileSize);
+  gameData->gameMap =
+      createMap(gameData->mapWidth, gameData->mapHeight, gameData->tileSize);
   gameData->log = (queue_t *)malloc(sizeof(queue_t));
   gameData->log->front = -1;
   gameData->log->rear = -1;
