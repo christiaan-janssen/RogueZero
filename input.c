@@ -1,4 +1,5 @@
 #include "input.h"
+#include "utils.h"
 
 void handleInput(GameData *g) {
   if (IsKeyReleased(KEY_RIGHT)) {
@@ -19,7 +20,7 @@ void handleInput(GameData *g) {
 bool checkMove(GameData *g, Vector2 move) {
   float dx = move.x + g->player.pos.x;
   float dy = move.y + g->player.pos.y;
-  TraceLog(LOG_DEBUG, TextFormat("dx: %f, dy: %f", dx, dy));
+  // TraceLog(LOG_DEBUG, TextFormat("dx: %f, dy: %f", dx, dy));
 
   if (dx >= 0 && dy >= 0 && dx < g->mapWidth && dy < g->mapHeight) {
     return true;

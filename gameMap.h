@@ -2,15 +2,17 @@
 #define GAMEMAP_H_
 
 #include "gameData.h"
+#include "raylib.h"
 #include "tile.h"
+#include "utils.h"
 
+// TODO: Fix magic number
 typedef struct GameMap {
   const int width;
   const int height;
-  Tile *tiles[];
+  Tile tiles[50][35];
 } GameMap;
 
 GameMap *createMap(int width, int height, float tileSize);
-int coordToId(int x, int y, float height);
 
 #endif // GAMEMAP_H_

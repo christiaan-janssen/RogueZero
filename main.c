@@ -1,5 +1,4 @@
 #include "entity.h"
-#include "gameData.h"
 #include "input.h"
 #include "logger.h"
 #include "raylib.h"
