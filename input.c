@@ -18,12 +18,12 @@ void handleInput(GameData *g) {
 }
 
 bool checkMove(GameData *g, Vector2 move) {
-  float dx = move.x + g->player.pos.x;
-  float dy = move.y + g->player.pos.y;
-  // TraceLog(LOG_DEBUG, TextFormat("dx: %f, dy: %f", dx, dy));
+  int dx = move.x + g->player.pos.x;
+  int dy = move.y + g->player.pos.y;
 
-  if (dx >= 0 && dy >= 0 && dx < g->mapWidth && dy < g->mapHeight) {
-    return true;
+  if (g->gameMap->tiles[dx][dy].blocking) {
+    return false;
   }
-  return false;
+
+  return true;
 }
