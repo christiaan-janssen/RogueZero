@@ -18,5 +18,14 @@ GameMap *createMap(int width, int height, float tileSize) {
     }
   }
 
+  // Hardcode map
+  for (size_t x = 0; x < 10; x++) {
+    Vector2 pos_t = {x + 2, 3};
+    gameMap->tiles[x + 2][3] = *createTile(pos_t, wall_rect, true, true);
+
+    Vector2 pos_b = {x + 2, 9};
+    gameMap->tiles[x + 2][9] = *createTile(pos_b, wall_rect, true, true);
+  }
+
   return gameMap;
 }

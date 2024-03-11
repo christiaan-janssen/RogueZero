@@ -2,6 +2,7 @@
 #define GAMEDATA_H_
 
 #include "cJSON.h"
+#include "constants.h"
 #include "entity.h"
 #include "gameMap.h"
 #include "logger.h"
