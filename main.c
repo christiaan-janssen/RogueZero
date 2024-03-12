@@ -1,4 +1,3 @@
-#include "entity.h"
 #include "input.h"
 #include "logger.h"
 #include "raylib.h"
