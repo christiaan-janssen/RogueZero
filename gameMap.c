@@ -7,6 +7,7 @@ GameMap *createMap(int width, int height, float tileSize) {
   Rectangle floor_rect = {0, 0, tileSize, tileSize};
   Rectangle wall_rect = {10 * tileSize, 17 * tileSize, tileSize, tileSize};
 
+  // Create the map
   for (size_t y = 0; y < height; y++) {
     for (size_t x = 0; x < width; x++) {
       Vector2 pos = {x, y};
