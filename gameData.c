@@ -1,4 +1,5 @@
 #include "gameData.h"
+#include "cJSON.h"
 
 GameData *setupGameData() {
   GameData *gameData = malloc(sizeof(*gameData));
@@ -6,18 +7,6 @@ GameData *setupGameData() {
   if (!gameData) {
     TraceLog(LOG_FATAL, "malloc failed");
   }
-
-  gameData->mapWidth = MAP_WIDTH;
-  gameData->mapHeight = MAP_HEIGHT;
-  gameData->tileSize = 16.0f;
-  gameData->player.rect = (Rectangle){25 * gameData->tileSize, 0.0f,
-                                      gameData->tileSize, gameData->tileSize};
-  gameData->texture = LoadTexture("colored_packed.png");
-  gameData->gameMap =
-      createMap(gameData->mapWidth, gameData->mapHeight, gameData->tileSize);
-  gameData->log = (queue_t *)malloc(sizeof(queue_t));
-  gameData->log->front = -1;
-  gameData->log->rear = -1;
 
   FILE *fp = fopen("save.json", "r");
   if (fp != NULL) {
@@ -40,11 +29,28 @@ GameData *setupGameData() {
                 cJSON_GetObjectItem(cJSON_GetObjectItem(json, "player"), "pos"),
                 "y")
                 ->valueint;
+    gameData->mapWidth = cJSON_GetObjectItem(json, "mapWidth")->valueint;
+    gameData->mapHeight = cJSON_GetObjectItem(json, "mapHeight")->valueint;
+    gameData->tileSize = cJSON_GetObjectItem(json, "tileSize")->valueint;
 
     gameData->player.pos = (Vector2){x, y};
+
   } else {
     gameData->player.pos = (Vector2){1.0f, 1.0f};
   }
+
+  gameData->player.rect = (Rectangle){25 * gameData->tileSize, 0.0f,
+                                      gameData->tileSize, gameData->tileSize};
+  gameData->texture = LoadTexture("colored_packed.png");
+
+  // Setup the game Map
+  gameData->gameMap =
+      createMap(gameData->mapWidth, gameData->mapHeight, gameData->tileSize);
+
+  // Creatge the message queue
+  gameData->log = (queue_t *)malloc(sizeof(queue_t));
+  gameData->log->front = -1;
+  gameData->log->rear = -1;
 
   return gameData;
 }
