@@ -2,7 +2,7 @@
 #define INPUT_H_
 
 #include "gameData.h"
-#include "raylib.h"
+#include "include/raylib.h"
 #include <stdio.h>
 
 void handleInput(GameData *g);

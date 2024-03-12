@@ -1,6 +1,6 @@
+#include "include/raylib.h"
 #include "input.h"
 #include "logger.h"
-#include "raylib.h"
 #include "render.h"
 #include "save.h"
 

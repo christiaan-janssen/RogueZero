@@ -1,7 +1,7 @@
 #ifndef TILE_H_
 #define TILE_H_
 
-#include "raylib.h"
+#include "include/raylib.h"
 #include <stdlib.h>
 
 typedef struct Tile {

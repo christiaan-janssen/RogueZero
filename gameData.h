@@ -6,7 +6,7 @@
 #include "entity.h"
 #include "gameMap.h"
 #include "logger.h"
-#include "raylib.h"
+#include "include/raylib.h"
 #include <stdlib.h>
 
 typedef struct GameData {

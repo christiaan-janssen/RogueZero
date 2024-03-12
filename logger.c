@@ -1,5 +1,5 @@
 #include "logger.h"
-#include "raylib.h"
+#include "include/raylib.h"
 
 void enqueue(queue_t *q, char *text, Color color) {
   /* Add a log message to the log queue */

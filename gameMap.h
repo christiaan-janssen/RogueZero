@@ -2,7 +2,7 @@
 #define GAMEMAP_H_
 
 #include "constants.h"
-#include "raylib.h"
+#include "include/raylib.h"
 #include "tile.h"
 
 typedef struct GameMap {
