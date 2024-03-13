@@ -9,7 +9,7 @@ GameData *setupGameData() {
     TraceLog(LOG_FATAL, "malloc failed");
   }
 
-  // Load the gmae save
+  // Load the game save
   FILE *fp = fopen("save.json", "r");
   if (fp != NULL) {
     fseek(fp, 0L, SEEK_END);
@@ -59,9 +59,13 @@ GameData *setupGameData() {
   }
   gameData->player.rect = (Rectangle){25 * gameData->tileSize, 0.0f,
                                       gameData->tileSize, gameData->tileSize};
-  gameData->npc.pos = (Vector2){2, 2};
-  gameData->npc.rect = (Rectangle){25 * gameData->tileSize, 0.0f,
-                                   gameData->tileSize, gameData->tileSize};
+
+  for (size_t i = 0; i < 10; i++) {
+    gameData->entities[i].pos = (Vector2){1 + i, 1};
+    gameData->entities[i].rect = (Rectangle){
+        25 * gameData->tileSize, 0.0f, gameData->tileSize, gameData->tileSize};
+  }
+
   gameData->texture = LoadTexture("colored_packed.png");
 
   // Setup the game Map

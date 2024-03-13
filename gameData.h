@@ -15,7 +15,7 @@ typedef struct GameData {
   float tileSize;
   GameMap *gameMap;
   Entity player;
-  Entity npc;
+  Entity entities[10];
   Texture2D texture;
   queue_t *log;
 } GameData;

@@ -6,6 +6,7 @@
 typedef struct Entity {
   Vector2 pos;
   Rectangle rect; // The rect to render from the tilemap
+  char *name;
 } Entity;
 
 #endif // ENTITY_H_
