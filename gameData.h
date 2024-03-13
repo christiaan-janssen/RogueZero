@@ -5,16 +5,17 @@
 #include "constants.h"
 #include "entity.h"
 #include "gameMap.h"
-#include "logger.h"
 #include "include/raylib.h"
+#include "logger.h"
 #include <stdlib.h>
 
 typedef struct GameData {
   int mapWidth;
   int mapHeight;
   float tileSize;
-  struct GameMap *gameMap;
-  struct Entity player;
+  GameMap *gameMap;
+  Entity player;
+  Entity npc;
   Texture2D texture;
   queue_t *log;
 } GameData;

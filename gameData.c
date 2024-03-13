@@ -1,5 +1,6 @@
 #include "gameData.h"
 #include "cJSON.h"
+#include "include/raylib.h"
 
 GameData *setupGameData() {
   GameData *gameData = malloc(sizeof(*gameData));
@@ -58,6 +59,9 @@ GameData *setupGameData() {
   }
   gameData->player.rect = (Rectangle){25 * gameData->tileSize, 0.0f,
                                       gameData->tileSize, gameData->tileSize};
+  gameData->npc.pos = (Vector2){2, 2};
+  gameData->npc.rect = (Rectangle){25 * gameData->tileSize, 0.0f,
+                                   gameData->tileSize, gameData->tileSize};
   gameData->texture = LoadTexture("colored_packed.png");
 
   // Setup the game Map

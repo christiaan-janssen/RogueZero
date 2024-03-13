@@ -5,6 +5,9 @@ void renderEntity(GameData *g) {
       g->texture, g->player.rect,
       (Vector2){g->player.pos.x * g->tileSize, g->player.pos.y * g->tileSize},
       WHITE);
+  DrawTextureRec(
+      g->texture, g->npc.rect,
+      (Vector2){g->npc.pos.x * g->tileSize, g->npc.pos.y * g->tileSize}, WHITE);
 }
 
 void renderMap(GameData *g) {
