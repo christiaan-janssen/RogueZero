@@ -62,8 +62,9 @@ GameData *setupGameData() {
 
   for (size_t i = 0; i < 10; i++) {
     gameData->entities[i].pos = (Vector2){1 + i, 1};
-    gameData->entities[i].rect = (Rectangle){
-        25 * gameData->tileSize, 0.0f, gameData->tileSize, gameData->tileSize};
+    gameData->entities[i].rect =
+        (Rectangle){25 * gameData->tileSize, 2 * gameData->tileSize,
+                    gameData->tileSize, gameData->tileSize};
   }
 
   gameData->texture = LoadTexture("colored_packed.png");

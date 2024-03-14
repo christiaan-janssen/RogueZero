@@ -1,5 +1,4 @@
 #include "input.h"
-#include "utils.h"
 
 void handleInput(GameData *g) {
   if (IsKeyReleased(KEY_RIGHT)) {
